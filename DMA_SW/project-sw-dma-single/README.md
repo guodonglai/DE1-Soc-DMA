@@ -1,1 +1,1 @@
-DMA transfer using single
+DMA transfer using dma_prep_single.
