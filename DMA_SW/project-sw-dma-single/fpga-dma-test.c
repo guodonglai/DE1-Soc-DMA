@@ -16,7 +16,7 @@
 #include <sys/ioctl.h>
 #include <linux/types.h>
 #include <sys/types.h>
-
+#include <sys/time.h>
 
 int main(int argc, char *argv[]){
 	int dma_fd,csr_fd,clr_fd, i;
@@ -27,24 +27,37 @@ int main(int argc, char *argv[]){
 		printf("Unable to open fpga-dma dma debug file");
 		return -1;
 	}
-	unsigned int write_buf[1024];
-	unsigned int read_buf[1024];
-	for(i = 0; i < 1024; i++){
+	int numofwords = 2048;
+	unsigned int write_buf[numofwords];
+	unsigned int read_buf[numofwords];
+	for(i = 0; i < numofwords; i++){
 		write_buf[i] = i;
 	}
-	size_t count = 1024 * 4;
+	size_t count = numofwords * 4;
 	loff_t *ppos = 0;
 	
 	write(clr_fd, write_buf, count, ppos);
+	struct timeval t1, t2;
+	double elapsedTime;
+	gettimeofday(&t1, NULL);
 	write(dma_fd, write_buf, count, ppos);
+	gettimeofday(&t2, NULL);
+	elapsedTime = (t2.tv_sec - t1.tv_sec) * 1000000.0;
+	elapsedTime += (t2.tv_usec - t1.tv_usec);
+	printf("DMA write single T=%.0f uSec  n/sec=%2.3e\n\r", elapsedTime,numofwords * 4 *1e6/elapsedTime);        
+	
+	gettimeofday(&t1, NULL);
 	int readcount = read(dma_fd, read_buf, count, ppos);
-	for(i = 0; i < 1024; i++){
-		if(write_buf[i] == read_buf[i]){
+	gettimeofday(&t2, NULL);
+	elapsedTime = (t2.tv_sec - t1.tv_sec) * 1000000.0;
+	elapsedTime += (t2.tv_usec - t1.tv_usec);
+	printf("DMA read single T=%.0f uSec  n/sec=%2.3e\n\r", elapsedTime, numofwords * 4 *1e6/elapsedTime);
+	for(i = 0; i < numofwords; i++){
+		if(write_buf[i] != read_buf[i]){
 			printf("mismatch: read_buf[%d] = %d\n", i, read_buf[i]);
 		}
 	}
-  	printf("tx and rx buf are same\n");
+
 	printf("read %d\n", readcount);
-//	read(csr_fd, write_buf, count, ppos);
 	return 0;
 }
