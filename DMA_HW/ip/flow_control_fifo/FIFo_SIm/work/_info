@@ -1,0 +1,74 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/user/stud/fall18/hg2496/Desktop/lab3-hw-two-fifo/ip/flow_control_fifo/FIFo_SIm
+T_opt
+!s110 1574279429
+VULXEMJSU?8GI`?H=?g`ij0
+04 9 4 work FIFO_v_tf fast 0
+=1-54bf646067db-5dd59904-9b120-51b5
+Z1 o-quiet -auto_acc_if_foreign -work work
+Z2 tCvgOpt 0
+n@_opt
+Z3 OE;O;10.7b_1;67
+R0
+T_opt1
+!s110 1574282835
+VeUJdfRd52godUO?=kQ7Hf1
+04 6 4 work FIFO_v fast 0
+=1-54bf646067db-5dd5a653-2eaf7-6d5f
+R1
+R2
+n@_opt1
+R3
+R0
+vFIFO_v
+!s110 1574282847
+!i10b 1
+!s100 =E^7J?;4GSSRPB0<7R9e_0
+I>38MHXoN;cRUdAMaWYEE]1
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1574279193
+8/homes/user/stud/fall18/hg2496/Desktop/lab3-hw-two-fifo/ip/flow_control_fifo/FIFo_SIm/FIFO_v.v
+F/homes/user/stud/fall18/hg2496/Desktop/lab3-hw-two-fifo/ip/flow_control_fifo/FIFo_SIm/FIFO_v.v
+L0 25
+Z5 OE;L;10.7b_1;67
+r1
+!s85 0
+31
+!s108 1574282846.000000
+!s107 /homes/user/stud/fall18/hg2496/Desktop/lab3-hw-two-fifo/ip/flow_control_fifo/FIFo_SIm/FIFO_v.v|
+!s90 -reportprogress|300|-work|work|/homes/user/stud/fall18/hg2496/Desktop/lab3-hw-two-fifo/ip/flow_control_fifo/FIFo_SIm/FIFO_v.v|
+!i113 0
+Z6 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
+n@f@i@f@o_v
+vFIFO_v_tf
+!s110 1574282865
+!i10b 1
+!s100 j4`RGndbiKYXh@303o^oH2
+IOWFUa1J5>gLaOYkV?ibgI2
+R4
+R0
+w1574279739
+8/homes/user/stud/fall18/hg2496/Desktop/lab3-hw-two-fifo/ip/flow_control_fifo/FIFo_SIm/FIFO_v_tf.v
+F/homes/user/stud/fall18/hg2496/Desktop/lab3-hw-two-fifo/ip/flow_control_fifo/FIFo_SIm/FIFO_v_tf.v
+L0 6
+R5
+r1
+!s85 0
+31
+!s108 1574282865.000000
+!s107 /homes/user/stud/fall18/hg2496/Desktop/lab3-hw-two-fifo/ip/flow_control_fifo/FIFo_SIm/FIFO_v_tf.v|
+!s90 -reportprogress|300|-work|work|/homes/user/stud/fall18/hg2496/Desktop/lab3-hw-two-fifo/ip/flow_control_fifo/FIFo_SIm/FIFO_v_tf.v|
+!i113 0
+R6
+R2
+n@f@i@f@o_v_tf
